@@ -1,7 +1,8 @@
-Car Rental Management System
+Car Rental Management System:
 This is a Car Rental Management System built using Python. The system allows users to register,Login,bookcar and Returncar.Admins can Addcar,Updatecar,Deletecar,approve booking and Reject booking. The system also includes an SOS functionality for users to send emergency alerts during an active booking.
-
+########################
 Features
+########################
 User Features:
 Register: Users can create an account by providing a username, email, and password.
 Login: Users can log in to their accounts using their credentials.
@@ -17,8 +18,9 @@ Delete Car: Admins can delete cars from the system.
 List Bookings: Admins can view all bookings, including their status (awaiting approval, approved, rejected, or returned).
 Approve Booking: Admins can approve pending bookings and notify the user via email.
 Reject Booking: Admins can reject pending bookings and notify the user via email.
-
+############################
 Classes Used in the System
+############################
 The Car Rental Management System is designed using object-oriented programming (OOP) principles. Below is a detailed explanation of the classes used in the system:
 
 1. DatabaseConnection Class
@@ -84,9 +86,64 @@ Key Features:
 Command-Line Interface: Users and admins can interact with the system via the command line.
 
 Role-Based Access: Users and admins have separate menus and functionalities.
-
-
-
 send_sos_alert(user_id): Allows a user to send an SOS alert during an active booking.
-
 authenticate_admin(): Authenticates an admin during login.
+######################
+Prerequisites
+######################
+Before running the system, ensure you have the following installed:
+
+Python 3.x: The system is built using Python.
+
+AWS PostgreSQL RDS: No need to install the Database already database in hosted in AWS.Details are provided in configuration file. 
+
+Required Python Packages: Install the required packages using pip.
+
+#################
+Installation:
+#################
+
+1.Clone the repository
+git clone https://github.com/kiran260889/Car_Rentals.git
+cd Car_Rentals
+
+2.Install Dependencies:
+pip install -r requirements.txt
+
+3.Set Up Email Configuration:
+Email configuration is now done with carrental2608@gmail.com which is in configuration file.If you want the email's trigger to another email id .Please change in the configuration file.
+
+4.Database setup:
+A Postgres RDS Database is hosted in AWS.All the details are in the configuration file and the database is accessiable from all the systems.Detailed sturucture of the tables is Provided in carrental.sql file.
+
+5.Run the system:
+python car_rental.py user which runs in the user mode and all user functionalities are avaliable.Detailed documention is given users_document file.
+
+python car_rental.py admin which runs in the admin mode and all admin functionalities are avaliable.Detailed documention is given admin_document file.
+
+########################
+File Structure:
+########################
+Car_Rentals/
+│
+├── car_rental.py               # Main script to run the system
+├── config.ini                  # Configuration file for DB and email settings
+├── requirements.txt            # List of Python dependencies
+├── car_management.py           # Car management logic (includes SOS functionality)
+├── user_management.py          # User management logic
+└── database_connection.py      # Database connection handling
+├── user_Documentation.pdf      # Gives the detailed work flow for user
+├── Admin_Documentation.py      # Gives the detailed work flow for admin
+└── Maintenance and Support.pdf # Talks about maintainces
+
+##############
+License
+##############
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+
+
+
+
+
+
